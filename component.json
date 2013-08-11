@@ -1,0 +1,8 @@
+{
+  "name": "set",
+  "repo": "mteam/set",
+  "version": "0.1.0",
+  "scripts": [
+    "index.js"
+  ]
+}
