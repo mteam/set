@@ -21,9 +21,17 @@ Set.prototype.clear = function() {
 };
 
 Set.prototype.remove = function(val) {
-  var i = this.vals.indexOf(val);
-  if (~i) this.vals.splice(i, 1);
-  return !! ~i;
+  var index = this.vals.indexOf(val);
+
+  if (~index) {
+    for (var i = index, len = this.vals.length - 1; i < len; i++) {
+      this.vals[i] = this.vals[i + 1];
+    }
+
+    this.vals.length = len;
+  }
+
+  return !! ~index;
 };
 
 module.exports = Set;
